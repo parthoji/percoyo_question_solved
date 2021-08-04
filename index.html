@@ -1,54 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title> Percoyo-technical-assignment</title>
+		<title>Test By Pg</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		
 	</head>
 	<body>
+        <!-- header part is start from here ********************************* -->
 		<header class="bg-warning  p-2 ">
 			<div class="container">
 				<img src="images/logo.png" alt="logo" height="60px" width="60px;">
-				<span class="font-weight-bold pl-2" style="font-size: 20px;"> Developer's adda </span>
+				<span class=" pl-2" style="font-size: 20px;"> Developer's adda </span>
 			</div>
 		</header>
+
+
 		<!-- slider section is start from here ****************************** -->
-		<div class="container-fluid bg-warning ">
+		<div class="container-fluid ">
+
 			<div class="row">
+
+			<!-- Slider Left section is start from here ***************************** -->
 				<div class="col-lg-8 col-md-8 col-12" style="padding-left: 0; padding-right: 0;">
 					<div id="demo" class="carousel slide" data-ride="carousel">
 						<!-- Indicators -->
-						<ul class="carousel-indicators">
-							<li data-target="#demo" data-slide-to="0" class="active"></li>
-							<li data-target="#demo" data-slide-to="1"></li>
-							<li data-target="#demo" data-slide-to="2"></li>
+						<ul class="carousel-indicators ">
+							<li data-target="#demo" data-slide-to="0" class="active bg-warning"></li>
+							<li data-target="#demo" data-slide-to="1" class="bg-warning"></li>
+							<li data-target="#demo" data-slide-to="2" class="bg-warning"></li>
 						</ul>
 						
 						<!-- The slideshow -->
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="images/slider/slider1.jpg" alt="Los Angeles" width="100%" height="550">
+								<img src="images/slider/slider1.jpg" alt="slider1" width="100%"  height="550;">
 							</div>
 							<div class="carousel-item">
-								<img src="images/slider/slider2.jpg" alt="Chicago" width="100%" height="550">
+								<img src="images/slider/slider2.jpg" alt="slider2" width="100%" height="550;">
 							</div>
 							<div class="carousel-item">
-								<img src="images/slider/slider1.jpg" alt="New York" width="100%" height="550">
+								<img src="images/slider/slider1.jpg" alt="slider3" width="100%" height="550;">
 							</div>
 						</div>
 						
 						<!-- Left and right controls -->
-						<a class="carousel-control-prev" href="#demo" data-slide="prev">
-							<span class="carousel-control-prev-icon"></span>
+						<a class="carousel-control-prev " href="#demo" data-slide="prev">
+							<span class="carousel-control-prev-icon" ></span>
 						</a>
 						<a class="carousel-control-next" href="#demo" data-slide="next">
-							<span class="carousel-control-next-icon"></span>
+							<span class="carousel-control-next-icon " ></span>
 						</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-4 col-12 bg-light pt-5 ">
+
+
+		    <!-- form right section is start from here ***************************** -->
+				<div class="col-lg-4 col-md-4 col-12  pt-5 bg-light ">
 					<h4 class="text-warning text-center"> * Please Fill The Details : </h4>
 					<form method="POST" class="w-100 pt-2" onsubmit="return Formvalid() ">
 						<div class="form-group">
@@ -58,60 +67,69 @@
 						</div>
 						<div class="form-group">
 							<label for="email">Enter Your Email:</label>
-							<input type="emai1" class="form-control" id="email" placeholder="Enter email" 
+							<input type="emai1" class="form-control" id="email" placeholder="Enter email"
 							name="email" >
-							<span class="" id= "email_error"> </span>
+							<span class="text-danger font-weight-bold" id= "email_error"> </span>
 						</div>
 						<div class="form-group">
 							<label for="phoneno">Enter Your Number :</label>
-							<input type="tel" pattern="^\d{10}$" required class="form-control" id="phoneno"placeholder="Enter Number" name="phoneno">
-							<span class="" id= "num_error"> </span>
+							<input type="Mobile"  required class="form-control" id="phoneno" placeholder="Enter Number" name="phoneno">
+							<span class="text-danger font-weight-bold" id= "num_error"> </span>
 						</div>
-						
-						<button type="submit" class="btn btn-warning w-100 mt-3 ">Submit</button>
+
+						    <button type="submit" class="btn btn-warning  w-100 mt-3 ">Submit</button>
+
 					</form>
 					<div>
 					</div>
 				</div>
-				<script type="text/javascript">
-					
-					
-	            function Formvalid(){
-
-					        var uname = document.getElementById("name").value;
-							var uemail = document.getElementById("email").value;
-						    var num =document.getElementById("phoneno").value;
-						    
-							var uc = /^[A-Za-z. ]{3,29}$/;
-							var echeck = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-							
-
-							if(uc.test(uname)){
-								 document.getElementById('name_error').innerHTML=" ";
-							}else {
-								document.getElementById('name_error').innerHTML = " * Username is invalid ";
-								return false ;
-						  	}
-                             
-
-							if (echeck.test(uemail)){
-								 document.getElementById('email_error').innerHTML = " ";
-							}else {
-								document.getElementById('email_error').innerHTML = " * Email is invalid ";
-								return false ;
-							}
 
 
-							
-							
-							alert("Name = " + uname + '\n' + "Email= " + uemail + '\n' + "Contact no =" +  num );
-				        }
-
-			
-				</script>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
 				
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-			</body>
-		</html>
+				function Formvalid(){
+						var uname = document.getElementById("name").value;
+								var uemail = document.getElementById("email").value;
+							var number  =document.getElementById("phoneno").value;
+							
+								var uc = /^[A-Za-z. ]{3,29}$/;
+								var echeck = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+								var phonechk = /^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$/ ;
+								
+								if(uc.test(uname)){
+									document.getElementById('name_error').innerHTML=" ";
+								}else {
+									document.getElementById('name_error').innerHTML = " * Username is invalid Ex- (user , demo )";
+									return false ;
+								}
+		
+								if (echeck.test(uemail)){
+									document.getElementById('email_error').innerHTML = " ";
+								}else{
+								
+								document.getElementById('email_error').innerHTML =" * Email is invalid Ex-(demo@123gmail.com  )";
+									return false ;
+								}
+								if(phonechk.test(number)){
+									document.getElementById('num_error').innerHTML=" ";
+								}else {
+									document.getElementById('num_error').innerHTML = " * Number is invalid Ex-(9775876662, +91 9775876662) ";
+									return false ;
+								}
+		
+								alert("Name = " + uname + '\n' + "Email= " + uemail + '\n' + "Contact no =" +  number );
+
+								// due to redirect issue 
+								 window.href.location = "index.html";
+					}
+					
+		</script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	</body>
+</html>
