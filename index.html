@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title> percoyo test </title>
+		<title>Bootstrap 4 Example</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -50,18 +50,22 @@
 				</div>
 				<div class="col-lg-4 col-md-4 col-12 bg-light pt-5 ">
 					<h4 class="text-warning text-center"> * Please Fill The Details : </h4>
-					<form action="" method="POST" class="w-100 pt-2" onsubmit ="return Formvalid();">
+					<form method="POST" class="w-100 pt-2" onsubmit="return Formvalid() ">
 						<div class="form-group">
 							<label for="name">Enter Your Name :</label>
-							<input type="text" class="form-control" id="name" pattern=^[A-Za-z. ]{5,29}$ placeholder="Enter name" name="name" required="">
+							<input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required="">
+							<span class="text-danger font-weight-bold" id= "name_error"> </span>
 						</div>
 						<div class="form-group">
 							<label for="email">Enter Your Email:</label>
-							<input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="">
+							<input type="emai1" class="form-control" id="email" placeholder="Enter email" 
+							name="email" >
+							<span class="" id= "email_error"> </span>
 						</div>
 						<div class="form-group">
 							<label for="phoneno">Enter Your Number :</label>
 							<input type="tel" pattern="^\d{10}$" required class="form-control" id="phoneno"placeholder="Enter Number" name="phoneno">
+							<span class="" id= "num_error"> </span>
 						</div>
 						
 						<button type="submit" class="btn btn-warning w-100 mt-3 ">Submit</button>
@@ -72,13 +76,38 @@
 				<script type="text/javascript">
 					
 					
-					function Formvalid(){
-					var name  = document.getElementById("name").value;
-							var email = document.getElementById("email").value;
-							var num = document.getElementById("phoneno").value;
+	            function Formvalid(){
+
+					        var uname = document.getElementById("name").value;
+							var uemail = document.getElementById("email").value;
+						    var num =document.getElementById("phoneno").value;
+						    
+							var uc = /^[A-Za-z. ]{3,29}$/;
+							var echeck = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 							
-							alert("Name = " + name + '\n'+ "Email= " + email + '\n' + "Contact no =" +  num );
-				}
+
+							if(uc.test(uname)){
+								 document.getElementById('name_error').innerHTML=" ";
+							}else {
+								document.getElementById('name_error').innerHTML = " * Username is invalid ";
+								return false ;
+						  	}
+                             
+
+							if (echeck.test(uemail)){
+								 document.getElementById('email_error').innerHTML = " ";
+							}else {
+								document.getElementById('email_error').innerHTML = " * Email is invalid ";
+								return false ;
+							}
+
+
+							
+							
+							alert("Name = " + uname + '\n' + "Email= " + uemail + '\n' + "Contact no =" +  num );
+				        }
+
+			
 				</script>
 				
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
